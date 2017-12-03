@@ -202,6 +202,10 @@
     <Compile Include="Migrations\201712031231210_InitialMigration.Designer.cs">
       <DependentUpon>201712031231210_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712031922087_AddedAnnotationsAndAttributes.cs" />
+    <Compile Include="Migrations\201712031922087_AddedAnnotationsAndAttributes.Designer.cs">
+      <DependentUpon>201712031922087_AddedAnnotationsAndAttributes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -298,6 +302,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712031231210_InitialMigration.resx">
       <DependentUpon>201712031231210_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712031922087_AddedAnnotationsAndAttributes.resx">
+      <DependentUpon>201712031922087_AddedAnnotationsAndAttributes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
