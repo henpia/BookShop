@@ -1,14 +1,18 @@
 ﻿@model IEnumerable<BookShop.Models.Genre>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List of Genres";
 }
 
-<h2>Index</h2>
+<h2>List of Genres</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a type="button" class="btn btn-primary btn-sm" href="@Url.Action("Create")">
+        <span class="glyphicon glyphicon-plus"></span>
+        <span>Create New Genre</span>
+    </a>
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -29,10 +33,24 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
+            <a type="button" class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id=item.GenreId })">
+                <span class="glyphicon glyphicon-edit"></span>
+                <span>Edit</span>
+            </a>
+            <a type="button" class="btn btn-primary btn-sm" href="@Url.Action("Details", new { id=item.GenreId })">
+                <span class="glyphicon glyphicon-list"></span>
+                <span>Details</span>
+            </a>
+            <a type="button" class="btn btn-danger btn-sm" href="@Url.Action("Delete", new { id=item.GenreId })">
+                <span class="glyphicon glyphicon-trash"></span>
+                <span>Delete</span>
+            </a>
+        </td>
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.GenreId }) |
             @Html.ActionLink("Details", "Details", new { id=item.GenreId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.GenreId })
-        </td>
+        </td>*@
     </tr>
 }
 
