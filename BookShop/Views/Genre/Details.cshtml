@@ -1,13 +1,12 @@
 ﻿@model BookShop.Models.Genre
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Genre Details";
 }
 
-<h2>Details</h2>
+<h2>Genre Details</h2>
 
 <div>
-    <h4>Genre</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -28,7 +27,14 @@
 
     </dl>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.GenreId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a type="button" class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id=Model.GenreId })">
+        <span class="glyphicon glyphicon-edit"></span>
+        <span>Edit</span>
+    </a>
+    <a type="button" class="btn btn-primary btn-sm" href="@Url.Action("Index")">
+        <span class="glyphicon glyphicon-arrow-left"></span>
+        <span>Back to Genres</span>
+    </a>
 </p>
