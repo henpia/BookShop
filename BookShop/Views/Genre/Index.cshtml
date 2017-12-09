@@ -13,8 +13,8 @@
     </a>
 </p>
 <br />
-<table class="table table-striped">
-        <tr>
+<table class="table table-striped table-bordered table-hover table-condensed table-responsive">
+        <tr class="info">
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -25,7 +25,7 @@
         </tr>
 
 @foreach (var item in Model) {
-    <tr class="alert-success">
+    <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>

@@ -1,15 +1,19 @@
 ﻿@model IEnumerable<BookShop.Models.Book>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List of Books";
 }
 
-<h2>Index</h2>
+<h2>List of Books</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a type="button" class="btn btn-primary btn-sm" href="@Url.Action("Create")">
+        <span class="glyphicon glyphicon-plus-sign"></span>
+        <span>Create New Book</span>
+    </a>
 </p>
-<table class="table">
+<br />
+<table class="table table-bordered table-condensed table-hover table-responsive table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Genre.Name)
@@ -41,9 +45,18 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BookId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BookId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BookId })
+            <a type="button" class="btn btn-primary btn-xs" href="@Url.Action("Edit", new { id=item.BookId })">
+                <span class="glyphicon glyphicon-edit"></span>
+                <span>Edit</span>
+            </a>
+            <a type="button" class="btn btn-primary btn-xs" href="@Url.Action("Details", new { id=item.BookId })">
+                <span class="glyphicon glyphicon-list"></span>
+                <span>Details</span>
+            </a>
+            <a type="button" class="btn btn-danger btn-xs" href="@Url.Action("Delete", new { id=item.BookId })">
+                <span class="glyphicon glyphicon-trash"></span>
+                <span>Delete</span>
+            </a>
         </td>
     </tr>
 }
