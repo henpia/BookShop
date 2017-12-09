@@ -1,13 +1,12 @@
 ﻿@model BookShop.Models.Book
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Book Details";
 }
 
-<h2>Details</h2>
+<h2>Book Details</h2>
 
 <div>
-    <h4>Book</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -45,6 +44,12 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a type="button" class="btn btn-primary" href="@Url.Action("Edit", new { id=Model.BookId })">
+        <span class="glyphicon glyphicon-edit"></span>
+        <span>Edit Book</span>
+    </a>
+    <a type="button" class="btn btn-primary" href="@Url.Action("Index")">
+        <span class="glyphicon glyphicon-arrow-left"></span>
+        <span>Back to Books</span>
+    </a>
 </p>
